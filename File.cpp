@@ -35,3 +35,11 @@ std::ostream & operator<< (std::ostream & os, File &F){
     os << F.path << std::to_string(F.size);
     return os;
 }
+std::istream & operator>> (std::istream & is, File &F){
+    is >> F.path >> F.extension;
+    return is;
+}
+
+std::string File::get_path() {
+    return path;
+}
