@@ -62,7 +62,7 @@ public:
         return this == &D;
     }
     friend std::istream& operator>> (std::istream& is, Directory &D);
-
+    friend std::ostream & operator<< (std::ostream & os, Directory &D);
 };
 
 
