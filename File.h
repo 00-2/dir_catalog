@@ -14,8 +14,8 @@ class File {
     std::string path;
     std::string extension;
     unsigned short mode; // max is 777
+public:
     File();
-
     File(std::string path, std::string extension);
 
     void change_mode(unsigned short mode);
@@ -23,13 +23,13 @@ class File {
     int get_file_hash();
     void clear();
 
-    bool operator==(File&D_source){
+    bool operator==(const File&D_source){
         return (this->path == D_source.path) &&
             (this->size == D_source.size) &&
             (this->extension == D_source.extension) &&
             (this->mode == D_source.mode);
     }
-
+    friend std::ostream & operator<< (std::ostream & os, File &F);
 };
 
 #endif //REWRITE_DIR_CATALOG_FILE_H

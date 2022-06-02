@@ -31,3 +31,7 @@ int File::get_file_hash() {
 void File::clear() {
     this->size = 0;
 }
+std::ostream & operator<< (std::ostream & os, File &F){
+    os << F.path << std::to_string(F.size);
+    return os;
+}

@@ -1,6 +1,10 @@
 #include <iostream>
+#include "Directory.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    File f;
+    Directory D = Directory("path");
+    D.add(f);
+    std::cout << D;
     return 0;
 }
